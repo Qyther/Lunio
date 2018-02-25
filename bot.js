@@ -587,4 +587,4 @@ client.on("guildMemberAdd", member => {
   console.log(chalk.grey.bgCyan.bold(member.user.username + " joined our server, Daddy!"));
 });
 
-client.login("NDExOTg2NjM2NDYxNTcyMDk4.DWG7jg._tyIcvtk6L2tLHF-qoeV0bgfuKs");
+client.login(process.env.BOT_TOKEN);
