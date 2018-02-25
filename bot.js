@@ -469,7 +469,7 @@ return;
     }
   }
 
-  if (msg.content.toLowerCase().startsWith("nom") {
+  if (msg.content.toLowerCase().startsWith("nom")) {
   if (msg.mentions.member) {
   msg.channel.send(msg.mentions.members.first() + " :blobnom:");
   } else {
