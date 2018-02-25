@@ -473,7 +473,7 @@ return;
   if (msg.mentions.member) {
   msg.channel.send(msg.mentions.members.first() + " \:blobnom:");
   } else {
-  msg.reply(":blobnom:");
+  msg.reply("\:blobnom:");
   }
   }
   
