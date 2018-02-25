@@ -470,10 +470,11 @@ return;
   }
 
   if (msg.content.toLowerCase().startsWith("nom")) {
+  const emoji = client.emojis.find("name", "blobnom");
   if (msg.mentions.member) {
-  msg.channel.send(msg.mentions.members.first() + " \:blobnom:");
+  msg.channel.send(msg.mentions.members.first() + emoji);
   } else {
-  msg.reply("\:blobnom:");
+  msg.reply(emoji);
   }
   }
   
