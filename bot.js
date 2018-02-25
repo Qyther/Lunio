@@ -469,6 +469,14 @@ return;
     }
   }
 
+  if (msg.content.toLowerCase().startsWith("nom") {
+  if (msg.mentions.member) {
+  msg.channel.send(msg.mentions.members.first() + " :blobnom:");
+  } else {
+  msg.reply(":blobnom:");
+  }
+  }
+  
   if (msg.content.toLowerCase() === "who made lunio?" || msg.content.toLowerCase() === "who made the bot" || msg.content.toLowerCase() === "who made lunio") {
     msg.delete();
     msg.channel.send("OOH, OOH! Teacher! I know that question!");
@@ -579,4 +587,4 @@ client.on("guildMemberAdd", member => {
   console.log(chalk.grey.bgCyan.bold(member.user.username + " joined our server, Daddy!"));
 });
 
-client.login(process.env.BOT_TOKEN);
+client.login("NDExOTg2NjM2NDYxNTcyMDk4.DWG7jg._tyIcvtk6L2tLHF-qoeV0bgfuKs");
