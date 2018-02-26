@@ -215,7 +215,7 @@ if (msg.content.toLowerCase().startsWith("lunio, unban ")) {
 if (msg.content.toLowerCase() === "lunio, shutdown" && msg.member.roles.some(r=>("owner").includes(r.name))) {
   msg.delete();
   client.user.setPresence({ status: "away"});
-  console.log(msg.author.username + " shutted me down");
+  console.log(msg.author.username + " has shut me down");
   msg.channel.send("Shutting down...");
   client.destroy();
   return;
@@ -223,7 +223,7 @@ if (msg.content.toLowerCase() === "lunio, shutdown" && msg.member.roles.some(r=>
 
 if (msg.content.toLowerCase().startsWith("lunio, addexp ") && msg.member.roles.some(r=>("owner").includes(r.name)) || msg.content.toLowerCase().startsWith("lunio, addxp ") && msg.member.roles.some(r=>("owner").includes(r.name))) {
 msg.delete();
-if (msg.mentions.members.first()) {
+if (msg.mentions.members) {
 for (i=0;i<names.length;i++) {
   if (names[i].includes(msg.mentions.members.first().displayName) && msg.content.split(" ")[3] !== "") {
     var tmls = parseInt(names[i].split("$")[1]);
@@ -243,7 +243,7 @@ return;
 
 if (msg.content.toLowerCase().startsWith("lunio, removeexp ") && msg.member.roles.some(r=>("owner").includes(r.name)) || msg.content.toLowerCase().startsWith("lunio, removexp ") && msg.member.roles.some(r=>("owner").includes(r.name))) {
 msg.delete();
-if (msg.mentions.members.first()) {
+if (msg.mentions.members) {
 for (i=0;i<names.length;i++) {
   if (names[i].includes(msg.mentions.members.first().displayName) && msg.content.split(" ")[3] !== "") {
     var tmls = parseInt(names[i].split("$")[1]);
@@ -263,7 +263,7 @@ return;
 
 if (msg.content.toLowerCase().startsWith("lunio, setexp ") && msg.member.roles.some(r=>("owner").includes(r.name)) || msg.content.toLowerCase().startsWith("lunio, setxp ") && msg.member.roles.some(r=>("owner").includes(r.name))) {
 msg.delete();
-if (msg.mentions.members.first()) {
+if (msg.mentions.members) {
 for (i=0;i<names.length;i++) {
   if (names[i].includes(msg.mentions.members.first().displayName) && msg.content.split(" ")[3] !== "") {
     var tmls = parseInt(names[i].split("$")[1]);
@@ -283,7 +283,7 @@ return;
 
 if (msg.content.toLowerCase().startsWith("lunio, removelvl ") && msg.member.roles.some(r=>("owner").includes(r.name)) || msg.content.toLowerCase().startsWith("lunio, removelvl ") && msg.member.roles.some(r=>("owner").includes(r.name))) {
 msg.delete();
-if (msg.mentions.members.first()) {
+if (msg.mentions.members) {
 for (i=0;i<names.length;i++) {
   if (names[i].includes(msg.mentions.members.first().displayName) && msg.content.split(" ")[3] !== "") {
     var tmls = parseInt(names[i].split("$")[1]);
@@ -303,7 +303,7 @@ return;
 
 if (msg.content.toLowerCase().startsWith("lunio, addlvl ") && msg.member.roles.some(r=>("owner").includes(r.name)) || msg.content.toLowerCase().startsWith("lunio, addlevel ") && msg.member.roles.some(r=>("owner").includes(r.name))) {
 msg.delete();
-if (msg.mentions.members.first()) {
+if (msg.mentions.members) {
 for (i=0;i<names.length;i++) {
   if (names[i].includes(msg.mentions.members.first().displayName) && msg.content.split(" ")[3] !== "") {
     var tmls = parseInt(names[i].split("$")[1]);
@@ -323,7 +323,7 @@ return;
 
 if (msg.content.toLowerCase().startsWith("lunio, setlvl ") && msg.member.roles.some(r=>("owner").includes(r.name)) || msg.content.toLowerCase().startsWith("lunio, setlevel ") && msg.member.roles.some(r=>("owner").includes(r.name))) {
 msg.delete();
-if (msg.mentions.members.first()) {
+if (msg.mentions.members) {
 for (i=0;i<names.length;i++) {
   if (names[i].includes(msg.mentions.members.first().displayName) && msg.content.split(" ")[3] !== "") {
     var tmls = parseInt(names[i].split("$")[1]);
@@ -469,7 +469,7 @@ return;
     }
   }
 
-  if (msg.content.toLowerCase().startsWith("nom") {
+  if (msg.content.toLowerCase().startsWith("nom")) {
   msg.delete();
   if (msg.mentions.member) {
   msg.channel.send(msg.mentions.members.first() + " :blobnom:");
