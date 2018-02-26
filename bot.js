@@ -1,4 +1,4 @@
-const Discord = require("discord.js");
+﻿const Discord = require("discord.js");
 const client = new Discord.Client();
 const ddiff = require("return-deep-diff");
 const chalk = require("chalk");
@@ -221,7 +221,7 @@ if (msg.content.toLowerCase() === "lunio, shutdown" && msg.member.roles.some(r=>
   return;
 }
 
-if (msg.content.toLowerCase().startsWith("lunio, addexp ") && msg.member.roles.some(r=>("owner").includes(r.name)) && msg.content.toLowerCase().startsWith("lunio, addxp ") && msg.member.roles.some(r=>("owner").includes(r.name))) {
+if (msg.content.toLowerCase().startsWith("lunio, addexp ") && msg.member.roles.some(r=>("owner").includes(r.name)) || msg.content.toLowerCase().startsWith("lunio, addxp ") && msg.member.roles.some(r=>("owner").includes(r.name))) {
 msg.delete();
 if (msg.mentions.members.first()) {
 for (i=0;i<names.length;i++) {
@@ -241,7 +241,7 @@ for (i=0;i<names.length;i++) {
 return;
 }
 
-if (msg.content.toLowerCase().startsWith("lunio, removeexp ") && msg.member.roles.some(r=>("owner").includes(r.name)) && msg.content.toLowerCase().startsWith("lunio, removexp ") && msg.member.roles.some(r=>("owner").includes(r.name))) {
+if (msg.content.toLowerCase().startsWith("lunio, removeexp ") && msg.member.roles.some(r=>("owner").includes(r.name)) || msg.content.toLowerCase().startsWith("lunio, removexp ") && msg.member.roles.some(r=>("owner").includes(r.name))) {
 msg.delete();
 if (msg.mentions.members.first()) {
 for (i=0;i<names.length;i++) {
@@ -261,7 +261,7 @@ for (i=0;i<names.length;i++) {
 return;
 }
 
-if (msg.content.toLowerCase().startsWith("lunio, setexp ") && msg.member.roles.some(r=>("owner").includes(r.name)) && msg.content.toLowerCase().startsWith("lunio, setxp ") && msg.member.roles.some(r=>("owner").includes(r.name))) {
+if (msg.content.toLowerCase().startsWith("lunio, setexp ") && msg.member.roles.some(r=>("owner").includes(r.name)) || msg.content.toLowerCase().startsWith("lunio, setxp ") && msg.member.roles.some(r=>("owner").includes(r.name))) {
 msg.delete();
 if (msg.mentions.members.first()) {
 for (i=0;i<names.length;i++) {
@@ -281,7 +281,7 @@ for (i=0;i<names.length;i++) {
 return;
 }
 
-if (msg.content.toLowerCase().startsWith("lunio, removelvl ") && msg.member.roles.some(r=>("owner").includes(r.name)) && msg.content.toLowerCase().startsWith("lunio, removelvl ") && msg.member.roles.some(r=>("owner").includes(r.name))) {
+if (msg.content.toLowerCase().startsWith("lunio, removelvl ") && msg.member.roles.some(r=>("owner").includes(r.name)) || msg.content.toLowerCase().startsWith("lunio, removelvl ") && msg.member.roles.some(r=>("owner").includes(r.name))) {
 msg.delete();
 if (msg.mentions.members.first()) {
 for (i=0;i<names.length;i++) {
@@ -301,7 +301,7 @@ for (i=0;i<names.length;i++) {
 return;
 }
 
-if (msg.content.toLowerCase().startsWith("lunio, addlvl ") && msg.member.roles.some(r=>("owner").includes(r.name)) && msg.content.toLowerCase().startsWith("lunio, addlevel ") && msg.member.roles.some(r=>("owner").includes(r.name))) {
+if (msg.content.toLowerCase().startsWith("lunio, addlvl ") && msg.member.roles.some(r=>("owner").includes(r.name)) || msg.content.toLowerCase().startsWith("lunio, addlevel ") && msg.member.roles.some(r=>("owner").includes(r.name))) {
 msg.delete();
 if (msg.mentions.members.first()) {
 for (i=0;i<names.length;i++) {
@@ -469,15 +469,16 @@ return;
     }
   }
 
-  if (msg.content.toLowerCase().startsWith("nom")) {
-  const emoji = client.emojis.find("name", "blobnom");
+  if (msg.content.toLowerCase().startsWith("nom") {
+  msg.delete();
   if (msg.mentions.member) {
-  msg.channel.send(msg.mentions.members.first() + emoji);
+  msg.channel.send(msg.mentions.members.first() + " :blobnom:");
   } else {
-  msg.reply(emoji);
+  msg.reply(":blobnom:");
   }
+  return;
   }
-  
+
   if (msg.content.toLowerCase() === "who made lunio?" || msg.content.toLowerCase() === "who made the bot" || msg.content.toLowerCase() === "who made lunio") {
     msg.delete();
     msg.channel.send("OOH, OOH! Teacher! I know that question!");
